@@ -1,0 +1,40 @@
+import java.util.*;
+import java.io.*;
+public class Main{
+     static File myFile = new File("Notebook.txt");
+     public static boolean checkForWord(String word){
+        try{
+            Scanner sc = new Scanner(myFile);
+        String line=null;
+        if(sc.hasNext()){while(sc.hasNext()){
+            line = sc.nextLine();
+            if(line.contains(word)){
+                return true;
+            }
+        }}}catch(IOException e){
+            System.out.println("Error : "+e);
+        }
+        return false;
+     }
+    public static void main(String[] args){
+     try{   
+         if(myFile.exists()){
+             System.out.println("File already present");
+         }else{
+        if(myFile.createNewFile()){
+            System.out.println("File creation success");
+        }else{
+            System.out.println("Not able to create");
+        }}
+            FileWriter fw = new FileWriter(myFile);
+            fw.write("Hi Hello Makkale!!!...\nWelcome to my tutorial\nHere i am practising many basic programs in JAVA\nStored them here for future reference\nIf you guyz found it helpfull you can use them\nThank You!!!\nLots of luv:)");
+            fw.close();
+            if(checkForWord("basic")){
+                System.out.println("The file contains the specified word");
+            }else{
+                System.out.println("The file don't have the specified word");
+            }
+        }catch(IOException e){
+        System.out.println("IOException : "+e);
+    }
+}}
