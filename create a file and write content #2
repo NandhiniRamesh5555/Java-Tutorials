@@ -1,0 +1,19 @@
+import java.util.*;
+import java.io.*;
+public class Main{
+    public static void main(String[] args){
+     try{   File myFile = new File("Notebook.txt");
+        if(myFile.createNewFile()){
+            System.out.println("Success");
+            FileWriter fw = new FileWriter(myFile);
+            fw.write("Hi Hello Makkale!!!...\nWelcome to my tutorial\nHere i am practising many basic programs in JAVA\nStored them here for future reference\nIf you guyz found it helpfull you can use them\nThank You!!!\nLots of luv:)");
+            fw.close();
+        }else{
+            System.out.println("Not able to create");
+        }
+        
+    }catch(IOException e){
+        System.out.println("IOException : "+e);
+    }finally{
+        }
+}}
