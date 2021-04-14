@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main{
+        static int a=0;
+        static int b=1;
+        static int c=0;
+    static void fibanocci(int n){
+    if(n>0){
+        c=a+b;
+        a=b;
+        b=c;
+        System.out.print(", "+c);
+        fibanocci(n-1);
+    }
+    }
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int num=sc.nextInt();
+    System.out.print(a+", "+b);
+    fibanocci(num-2);
+    }
+}
