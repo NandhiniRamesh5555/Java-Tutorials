@@ -1,0 +1,25 @@
+import java.util.*;
+import java.io.*;
+public class Main{
+     static File oldFile = new File("Notebook.txt");
+      static File newFile = new File("Textbook.txt");
+    public static void main(String[] args){
+     try{   
+         if(oldFile.exists()){
+             System.out.println("File already present");
+         }else{
+        if(oldFile.createNewFile()){
+            System.out.println("File creation success");
+        }else{
+            System.out.println("Not able to create");
+        }
+    }
+    if(oldFile.renameTo(newFile)){
+        System.out.println("Renamed");
+    }else{
+        System.out.println("not able to rename");
+    } 
+}catch(IOException e){
+        System.out.println("IOException : "+e);
+    }
+}}
