@@ -19,6 +19,7 @@ public class Main{
                 profit = profit+coins.get(i+1);
                 proArr.add(profit);
             }else{
+                proArr.add(profit);
                 profit= coins.get(i+1);
             }
         }
