@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the prices of the product for this week :");
+        ArrayList<Integer> prices = new ArrayList<Integer>();
+        for(int i=0;i<7;i++){
+            prices.add(sc.nextInt());
+        }
+        int maxProfit=prices.get(0);
+        int diff=0;
+        ArrayList<Integer> proArr = new ArrayList<Integer>();
+        for(int i=0;i<prices.size();i++){
+            if(i==(prices.size()-1)){
+            diff = prices.get(i) - maxProfit;
+            proArr.add(diff);
+            }else{
+            if(prices.get(i)<prices.get(i+1)){
+            //do nothing    
+            }else{
+                diff = prices.get(i) - maxProfit;
+                proArr.add(diff);
+                maxProfit = prices.get(i+1);
+            }
+          }
+        }
+        Collections.sort(proArr);
+        int maxPro = proArr.get(proArr.size()-1);
+        System.out.println("The max profit for this product : "+maxPro );
+    }
+}
