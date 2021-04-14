@@ -1,0 +1,11 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+    Scanner sc =  new Scanner(System.in);
+    String word = sc.nextLine();
+    word = word.toLowerCase();
+    if(word.matches(".*[aeiou].*")){
+        System.out.println("The String contains vowels");
+    }else{
+        System.out.println("The String don't have vowels");
+    }}}
