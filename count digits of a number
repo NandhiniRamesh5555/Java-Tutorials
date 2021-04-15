@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main{
+    public static int countDigits(int q){
+        int count=0;
+        while(q!=0){
+            q=q/10;
+            count++;
+        }
+        return count;
+    }
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int a=sc.nextInt();
+    int digits = countDigits(a);
+    System.out.println(digits);
+    }
+}    
