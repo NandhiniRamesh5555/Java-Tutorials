@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String word  = sc.nextLine();
+        String lShift = word.substring(1)+word.substring(0,1);
+        String rShift = word.substring(word.length()-1)+word.substring(0,word.length()-1);
+        System.out.println("leftshift : "+lShift+"  --- rightshift : "+rShift);
+        if(lShift.equals(rShift)){
+            System.out.println("Same");
+        }else{
+            System.out.println("Not same");
+        }
+    }
+}
