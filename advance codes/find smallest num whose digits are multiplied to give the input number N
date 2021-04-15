@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int a=sc.nextInt();
+    if(a<10){
+        System.out.println("The smallest num is : "+(a+10));
+    }else if(a>=10){
+        ArrayList<Integer> num = new ArrayList<Integer>();
+        for(int i=9;i>=2;i--){
+            
+        while(a%i==0){
+            a=a/i;
+            num.add(i);
+        }
+        
+    }
+    if(a>10){
+        System.out.println("prime");
+    }
+    if(num.size()!=0){
+    Collections.sort(num);
+    System.out.println("The Smallest Number is: "+(num.toString().replaceAll("[.*\\[\\], ]","")));
+    }
+    }
+        
+    }
+  }
