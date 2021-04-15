@@ -1,0 +1,37 @@
+import java.util.*;
+import java.util.Arrays;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        char[] charsLeft = word.toCharArray();
+        char[] charsRight = word.toCharArray();
+        char c1 = charsLeft[0];
+        char c2 = charsRight[charsRight.length-1];
+        //Left shifting
+        for(int i=0;i<word.length();i++){
+            if(i==word.length()-1){
+                charsLeft[charsLeft.length-1] = c1;
+            }else{
+            charsLeft[i]=charsLeft[i+1];    
+            }
+        }
+        
+        //Right shifting
+         for(int i=word.length()-1;i>=0;i--){
+            if(i==0){
+                charsRight[0] = c2;
+            }else{
+                charsRight[i]=charsRight[i-1];
+            }
+        }
+        System.out.println("Lshit : "+Arrays.toString(charsLeft)+" - Rshift : "+Arrays.toString(charsRight));
+        //comparing if they are StackTraceElement
+        if(Arrays.equals(charsRight, charsLeft)){
+            System.out.println("same");
+        }else{
+            System.out.println("not the same");       
+        }
+         
+    }
+}
