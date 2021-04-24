@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main{
+    
+    public static int countdigits(int n){
+    int count=0;
+    while(n!=0){
+        n=n/10;
+        count = count +1;
+    } 
+    return count;
+    }
+    
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);    
+    System.out.println("Enter the input String:");
+    String str = sc.nextLine();
+    int num=Character.getNumericValue(str.charAt(0));
+    for(int i=1;i<str.length();i++){
+        if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+            num = (num*10)+(Character.getNumericValue(str.charAt(i)));
+        }else{
+            break;
+        }
+    }
+    int count = countdigits(num);
+    String rem = str.substring(count);
+    int len = rem.length();
+    if(len==num){
+        System.out.println(true);
+    }else{
+        System.out.println(false);
+    }
+        
+    }
+}
