@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the String:");
+    String inp1 = sc.nextLine();
+    System.out.println("Enter the seq to be searched");
+    String inp2 = sc.nextLine();
+    int n=0;
+    int initLength = inp1.length();
+    inp1 = inp1.replace(inp2,"");
+    int finalLength = inp1.length();
+    n = (initLength-finalLength)/(inp2.length());
+    
+    System.out.println("The seq appears "+n+" times in the input");
+        
+    }
+}
