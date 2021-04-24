@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);    
+    System.out.println("Enter the input String:");
+    String str = sc.nextLine();
+    try{
+    int n = Character.getNumericValue(str.charAt(0));
+    String rem = str.substring(1);
+    int len = rem.length();
+    if(n==len){
+        System.out.println(true);
+    }else{
+        System.out.println(false);
+    }}catch(Exception e){
+        System.out.println("ERROR : "+e);
+    }
+        
+    }
+}
