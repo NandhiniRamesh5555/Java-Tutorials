@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+    System.out.println("Enter the String :");    
+    Scanner sc = new Scanner(System.in);
+    String str = sc.nextLine();
+    System.out.println("Enter the num of substring :");
+    int n = sc.nextInt();
+    ArrayList<String> substrings = new ArrayList<String>();
+    
+    for(int i=0;i<str.length();i=i+n){
+        if((i+n)>str.length()){
+            substrings.add(str.substring(i));
+        }else{
+        substrings.add(str.substring(i,i+n));
+    }}
+    int count=0;
+    ArrayList<Integer> numarr  = new ArrayList<Integer>();
+    for(String s : substrings){
+       for(int i=0;i<s.length();i++){
+           if(Character.getNumericValue(s.charAt(i))==1){
+               count++;
+           }
+       }
+       numarr.add(count);
+       count=0;
+    }
+    Collections.sort(numarr);
+    
+    System.out.println("The max num of 1 in the substrings is :"+numarr.get(numarr.size()-1));
+    }
+}
