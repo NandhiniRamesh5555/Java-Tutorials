@@ -1,0 +1,38 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        System.out.println("Enter number of elements in array: ");
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        System.out.println("enter the elements :");
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        for(int i=0;i<N;i++){
+            arr.add(sc.nextInt());
+        }
+
+        ArrayList<Integer> newArr  = new ArrayList<Integer>();
+        
+        Collections.sort(arr);
+        int max1=arr.get(arr.size()-1);
+        int max2 =  arr.get(arr.size()-2);
+        for(int i=0;i<=(max1+max2);i++){
+            newArr.add(0);
+        }        
+        
+        for(int i=0;i<arr.size();i++){
+            newArr.set(arr.get(i),1);
+        }
+     
+        int count=0;
+        for(int i=0;i<(arr.size()-1);i++){
+            for(int j=i+1;j<arr.size();j++){
+                if((newArr.get(arr.get(i)+arr.get(j)))==1){
+                    System.out.println();
+                    count++;
+                }
+            }
+        }
+        
+        System.out.println("The count is :" +count);
+    }
+}
