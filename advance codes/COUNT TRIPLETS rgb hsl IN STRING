@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    
+    public static int counttriplets(String trip, String org){
+        int firstCount=0;
+        int secondCount=0;
+        int result=0;
+        int thirdCount=0;
+        char first = trip.charAt(0);
+        char second = trip.charAt(1);
+        char third = trip.charAt(2);
+        for(int i=0;i<org.length();i++){
+            if(org.charAt(i)==third){
+                thirdCount++;
+            }
+        }
+        for(int i=0;i<org.length();i++){
+            if(org.charAt(i)==third){
+                thirdCount--;
+            }else if(org.charAt(i)==first){
+                firstCount++;
+            }else if(org.charAt(i)==second){
+                result = result + (firstCount*thirdCount);
+            }
+        }
+        return result;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String trip = sc.nextLine();
+        String org = sc.nextLine();
+        
+       int count = counttriplets(trip,org);
+        System.out.println("The count is : " +count);
+    }
+}
