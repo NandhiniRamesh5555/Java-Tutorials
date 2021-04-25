@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        while(true){
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        System.out.println("Enter elements of array and enter q if done");
+        while(sc.hasNext()){
+            if(sc.hasNextInt()){
+                arr.add(sc.nextInt());
+            }else{
+                if(sc.hasNext()){
+                    
+                    if((sc.next()).equalsIgnoreCase("q")){
+                        break;
+                    }else{
+                    System.out.println("wrong input :array cleared");
+                    arr.clear();
+                    break;
+                    }
+                }
+            }
+        }
+        System.out.println("arr :"+arr);
+        }
+    }
+}
