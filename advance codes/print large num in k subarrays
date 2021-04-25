@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main{
+    
+    public static void findMaxInSubArray(ArrayList<Integer> arr,int k){
+        int max=0;
+        for(int i=0;i<=(arr.size()-k);i++){
+            max=arr.get(i);
+            for(int j=1;j<k;j++){
+                if(max<arr.get(i+j)){
+                    max = arr.get(i+j);
+                }
+            }
+            System.out.print(max+" ");
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many elements?:");
+        int N = sc.nextInt();
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        System.out.println("Enter the elements:");
+        for(int i=0;i<N;i++){
+            arr.add(sc.nextInt());
+        }
+        System.out.println("Enter k value for subarrray:");
+        int k = sc.nextInt();
+        
+        findMaxInSubArray(arr,k);
+        
+    }
+}
