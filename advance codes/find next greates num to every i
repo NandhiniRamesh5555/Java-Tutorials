@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("how may elemets?:");
+        int N = sc.nextInt();
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        System.out.println("Enter the elements:");
+        for (int i=0;i<N;i++){
+        arr.add(sc.nextInt());    
+        }
+        for(int i=0;i<arr.size();i++){
+            if(i==arr.size()-1){
+                System.out.println("The next Gretest num to "+arr.get(i)+" is : -1");
+            }else{
+            for(int j=i+1;j<arr.size();j++){
+                if(arr.get(i)<arr.get(j)){
+                    System.out.println("The next Gretest num to "+arr.get(i)+" is : "+arr.get(j));
+                    break;
+                }
+                if(j==arr.size()-1){
+                     System.out.println("The next Gretest num to "+arr.get(i)+" is : -1");
+                }
+                 
+            }
+        }
+    }}
+}
