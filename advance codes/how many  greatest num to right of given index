@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter N");
+        int N = sc.nextInt();
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        System.out.println("Enter N values :");
+        for(int i=0;i<N;i++){
+            arr.add(sc.nextInt());
+        }
+        System.out.println("How many queries? :");
+        int q = sc.nextInt();
+        int[] queIndex = new int[q];
+        int count=0;
+        for(int i=0;i<q;i++){
+            queIndex[i]=sc.nextInt();
+        }
+        for(int i=0;i<q;i++){
+            for(int j=(queIndex[i]+1);j<(arr.size());j++){
+                if((arr.get(queIndex[i]))<arr.get(j)){
+                    count++;
+                }
+            }
+            System.out.println("The num of greatest elements to the right of "+arr.get(queIndex[i])+" is :"+count);
+            count=0;
+        }
+    }
+}
