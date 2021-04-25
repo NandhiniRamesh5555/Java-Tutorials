@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many elements?:");
+        int N = sc.nextInt();
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        System.out.println("Enter the elements:");
+        for(int i=0;i<N;i++){
+            arr.add(sc.nextInt());
+        }
+        
+       int maxdiff=0;
+       for(int i=0;i<arr.size()-1;i++){
+           for(int j=i+1;j<arr.size();j++){
+               if(arr.get(j)>arr.get(i) && (maxdiff<(j-i))){
+                   maxdiff=j-i;
+               }
+           }
+       }
+        
+        System.out.println("Max diff :"+maxdiff);
+    }
+}
