@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main{
+    
+    public static int sumOfDigitsToN(int N){
+        int sum=0;
+    for(int i=1;i<=N;i++){
+        sum = sum + sumOfDigits(i);
+    }
+    return sum;
+    }
+    
+    public static int sumOfDigits(int i){
+        int s=0;
+        while(i!=0){
+            s = s + (i%10);
+            i=i/10;
+        }
+        return s;
+    }
+    
+    public static void main(String[] args){
+       while(true){
+         Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int sum = sumOfDigitsToN(N);
+        System.out.println("Sum of Digits from 1 to N :"+sum);
+    }}
+}
