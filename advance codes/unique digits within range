@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main{
+    public static boolean uniqueDigits(int num){
+        int m=0,n=0,o=0;
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        for(int i=0;i<=9;i++){
+            arr.add(0);
+        }
+        while(num!=0){
+            m = num%10;
+            if(arr.get(m)==0){
+            arr.set(m,1);
+            }else{
+                return false;
+            }
+            num = num/10;
+        }
+        return true;
+    }
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the range:");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        
+        for(int i=a;i<=b;i++){
+            boolean unique = uniqueDigits(i);
+            if(unique){
+                System.out.println(i+" contains unique digits");    
+            }
+        }
+    }
+}
