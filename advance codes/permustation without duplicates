@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main{
+     static HashSet<String> ans = new HashSet<String>();
+    public static void permute(String str,String chr){
+        if(str.length()==0){
+            ans.add(chr);
+            return;
+        }
+        for(int i=0;i<str.length();i++){
+            char c = str.charAt(i);
+            String ros = str.substring(0, i)
+						+ str.substring(i + 1);
+            permute(ros,chr+c);
+        }
+       
+        
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        permute(str,"");
+        for(String s : ans){
+            System.out.println(s);
+        }
+    }
+}
