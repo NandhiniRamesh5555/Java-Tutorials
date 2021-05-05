@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    String str1 = sc.nextLine();
+    String str2 = sc.nextLine();
+    int n = sc.nextInt();
+    boolean bool=true;
+    boolean fDone=false;
+    boolean sDone=false;
+    int m=0;
+    int p=0;
+    ArrayList<Character> arr = new ArrayList<Character>();
+    for(int y=0;y<(str1.length() + str2.length());y++){
+    if(bool && !fDone){
+        for(int i=0;i<n;i++){
+        if(m<str1.length()){
+            arr.add(str1.charAt(m++));
+        }else{
+            fDone=true;
+        }
+        if(i==n-1){
+            bool = false;
+        }
+        }}else if(!bool && !sDone){
+        for(int j=0;j<n;j++){
+            if(p<str2.length()){
+            arr.add(str2.charAt(p++));
+        }else{
+            sDone=true;
+        }
+            if(j==n-1){
+            bool = true;
+        } 
+        }
+    }}
+    String s=arr.toString().replaceAll("[ ,\\[\\]]","");
+    System.out.println(s);
+    }
+} 
