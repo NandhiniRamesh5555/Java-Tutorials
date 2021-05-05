@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    ArrayList<Integer> arr = new ArrayList<Integer>();
+    System.out.println("Enter N value:");
+    int N = sc.nextInt();
+    System.out.println("Enter the values");
+    for(int i=0;i<N;i++){
+        arr.add(sc.nextInt());        
+    }
+    ArrayList<Integer> res = new ArrayList<Integer>();
+    for(int i=0;i<arr.size();i++){
+        if(i==0){
+            if(arr.get(i)>arr.get(i+1)){
+                res.add(arr.get(i));
+            }
+        }else if(i==arr.size()-1){
+            if(arr.get(i)>arr.get(i-1)){
+                res.add(arr.get(i));
+            }
+        }else{
+            if(arr.get(i)>arr.get(i-1) && arr.get(i)>arr.get(i+1)){
+                res.add(arr.get(i));
+            }
+        }
+    }
+    
+    Collections.sort(res);
+    System.out.println(res.get(res.size()-1));
+    }
+}
